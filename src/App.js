@@ -66,8 +66,3 @@ export default App;
 
 //step 1 : useState defulat : true
 //step 2 : useEffect -> i want to use this code only once when i jsut run my code
-
-//first commit
-// + App.js get some movie infos from fetched url with react and javascript
-// react ( useEffect , useState )
-// js ( async&await and how to use .then , map() function )
