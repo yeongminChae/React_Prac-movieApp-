@@ -1,18 +1,25 @@
 import propTypes from "prop-types";
-
-// function Movie(props1 , props2 , props3 ... ) {
-function Movie(coverImg, title, year, summary, genres) {
-  // movie component is get those props infos from the parent component
+import { Link } from "react-router-dom";
+// link is the component which helps send us to the other page without refresh
+function Movie({ coverImg, title, year, summary, genres }) {
+  // Movie.js:8 Uncaught TypeError: Cannot read properties of undefined (reading 'map')
+  // -> function Movie( coverImg, title, year, summary, genres ) My original code which caused the error
+  // i have to use the Curly Brackets for covering the those props
+  // ('{' coverImg, title, year, summary, genres '}')
   return (
     <div>
-      {/* <div key={movie.id}> we don't need key */}
       <img src={coverImg} alt={title} />
-      {/* img elements has the alt properties */}
       <h2>
-        {title} ({year})
+        <Link to="/movie">
+          {title} ({year})
+        </Link>
       </h2>
       <p>{summary}</p>
-      <ul>{genres && genres.map((genre) => <li key={genre}>{genre}</li>)}</ul>
+      <ul>
+        {genres.map((g) => (
+          <li key={g}>{g}</li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -22,7 +29,7 @@ Movie.propTypes = {
   title: propTypes.string.isRequired,
   year: propTypes.number.isRequired,
   summary: propTypes.string.isRequired,
-  genres: propTypes.arrayOf(propTypes.string).isRequired, // array of string
+  genres: propTypes.arrayOf(propTypes.string).isRequired,
 };
 
 export default Movie;

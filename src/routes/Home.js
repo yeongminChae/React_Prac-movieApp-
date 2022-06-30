@@ -16,6 +16,8 @@ function Home() {
   useEffect(() => {
     getMovies();
   }, []);
+
+  console.log(movies);
   return (
     <div>
       {loading ? (
@@ -24,7 +26,8 @@ function Home() {
         <div>
           {movies.map((movie) => (
             <Movie
-              key={movie.id} // key is used to render the component inside of map in react.js
+              key={movie.id}
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               year={movie.year}

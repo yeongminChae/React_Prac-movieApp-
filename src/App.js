@@ -1,6 +1,22 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
 function App() {
-  return null;
+  return (
+    <Router>
+      {/* switch is going to look for a route and it is render the component */}
+      <Switch>
+        <Route path="/moive">
+          <Detail />
+        </Route>
+        {/* inside of route is where we r going to write out component */}
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
-// App.js isn't showing the movie but it'll render the router instead , router is component which is looking the url
 export default App;
