@@ -8,8 +8,6 @@ function App() {
       <Switch>
         <Route path="/movie/:id">
           <Detail />
-          {/* /moive/:id -> dinamic url  */}
-          {/* if /moive/id which withiut the : we'll send the user to text ID not movie.id */}
         </Route>
         <Route path="/">
           <Home />
@@ -18,7 +16,5 @@ function App() {
     </Router>
   );
 }
-
-// react router is also support the dinamic url (dinamic url is i cam put some variables in my url)
 
 export default App;
