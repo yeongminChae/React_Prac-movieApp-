@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import Login from "./Login";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ const Home = () => {
   // console.log(movies);
   return (
     <div>
+      <Login />
       {loading ? (
         <h1>Loading...</h1>
       ) : (
